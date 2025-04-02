@@ -1,5 +1,5 @@
 
-import { Heart } from "lucide-react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -8,7 +8,11 @@ const Navbar = () => {
       <div className="container flex h-14 items-center justify-between">
         <div className="flex items-center gap-4">
           <a href="/" className="flex items-center gap-2">
-            <Heart className="h-5 w-5 fill-lovable-orange text-lovable-orange" />
+            <img 
+              src="/lovable-uploads/56b54e21-3518-425f-9465-55877834c461.png" 
+              alt="Lovable Logo" 
+              className="h-6 w-6"
+            />
             <span className="font-semibold text-lg">lovable</span>
           </a>
           
