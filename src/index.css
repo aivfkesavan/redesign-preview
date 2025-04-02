@@ -45,6 +45,23 @@
   body {
     @apply bg-lovable-dark text-foreground overflow-x-hidden;
   }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-lovable-dark;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-lovable-gray-light rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-lovable-gray-medium;
+  }
 }
 
 @layer components {
@@ -74,5 +91,11 @@
   
   .suggestion-btn {
     @apply px-4 py-2 rounded-full text-sm font-medium bg-lovable-gray-light text-muted-foreground hover:bg-lovable-gray-medium hover:text-foreground transition inline-flex items-center gap-2;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply backdrop-blur-md bg-lovable-dark-secondary/70 border border-lovable-gray-light;
   }
 }
