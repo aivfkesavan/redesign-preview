@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import Navbar from "@/components/Navbar";
+import PromptInput from "@/components/PromptInput";
+import SuggestionBar from "@/components/SuggestionBar";
+import TabNavigation from "@/components/TabNavigation";
+import ProjectGrid from "@/components/ProjectGrid";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col bg-lovable-dark">
+      <Navbar />
+      <main className="flex-1 container mx-auto py-8">
+        <PromptInput />
+        <SuggestionBar />
+        <TabNavigation />
+        <ProjectGrid />
+      </main>
+      <footer className="py-6 border-t border-lovable-gray-light">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Lovable. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
