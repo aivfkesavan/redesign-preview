@@ -66,7 +66,7 @@
 
 @layer components {
   .project-card {
-    @apply relative overflow-hidden bg-lovable-dark-secondary rounded-lg border border-lovable-gray-light hover:border-lovable-orange/70 transition-all duration-200 cursor-pointer;
+    @apply relative overflow-hidden bg-lovable-dark-secondary rounded-lg border border-lovable-gray-light hover:border-[#8B5CF6]/70 transition-all duration-200 cursor-pointer;
   }
   
   .project-card-img-container {
@@ -92,10 +92,14 @@
   .suggestion-btn {
     @apply px-4 py-2 rounded-full text-sm font-medium bg-lovable-gray-light text-muted-foreground hover:bg-lovable-gray-medium hover:text-foreground transition inline-flex items-center gap-2;
   }
+  
+  .glass-effect {
+    @apply backdrop-blur-sm bg-[#1E1E1E]/70 border border-[#8B5CF6]/20;
+  }
 }
 
 @layer utilities {
   .glass-effect {
-    @apply backdrop-blur-md bg-lovable-dark-secondary/70 border border-lovable-gray-light;
+    @apply backdrop-blur-md bg-lovable-dark-secondary/70 border border-[#8B5CF6]/20;
   }
 }

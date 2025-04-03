@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   return (
-    <header className="w-full bg-[#1A1F2C] border-b border-[#33C3F0]/20">
+    <header className="w-full bg-[#1A1F2C] border-b border-[#8B5CF6]/20">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-4">
           <a href="/" className="flex items-center gap-2">
@@ -13,13 +13,13 @@ const Navbar = () => {
               alt="Vibe Coding Logo" 
               className="h-8 w-8"
             />
-            <span className="font-bold text-xl bg-gradient-to-r from-[#8B5CF6] to-[#F97316] bg-clip-text text-transparent">
+            <span className="font-bold text-xl bg-gradient-to-r from-[#8B5CF6] to-[#8B5CF6] bg-clip-text text-transparent">
               Vibe Coding
             </span>
           </a>
           
           <nav className="hidden md:flex items-center gap-6 ml-6">
-            <a href="#" className="text-sm font-medium text-[#33C3F0] hover:text-white transition">
+            <a href="#" className="text-sm font-medium text-[#8B5CF6] hover:text-white transition">
               Projects
             </a>
             <a href="#" className="text-sm font-medium text-white/60 hover:text-white transition">
@@ -41,7 +41,7 @@ const Navbar = () => {
           <Button 
             variant="default" 
             size="sm" 
-            className="bg-gradient-to-r from-[#8B5CF6] to-[#F97316] hover:opacity-90 text-white"
+            className="bg-[#8B5CF6] hover:bg-[#8B5CF6]/90 text-white"
           >
             Get Started
           </Button>

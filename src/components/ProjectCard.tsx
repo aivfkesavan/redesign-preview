@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Card 
-      className={`bg-[#1A1F2C] border-[#33C3F0]/20 hover:border-[#8B5CF6] transition-all duration-300 
+      className={`bg-[#1A1F2C] border-[#8B5CF6]/20 hover:border-[#8B5CF6] transition-all duration-300 
                  cursor-pointer h-full transform ${isHovered ? 'scale-105' : 'scale-100'}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -39,7 +39,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
         
         <div className="mt-auto pt-4">
-          <Badge variant="outline" className="bg-[#221F26] border-[#33C3F0]/30 text-xs font-normal px-2 py-0.5 flex items-center gap-1 w-fit text-[#33C3F0]">
+          <Badge variant="outline" className="bg-[#221F26] border-[#8B5CF6]/30 text-xs font-normal px-2 py-0.5 flex items-center gap-1 w-fit text-[#8B5CF6]">
             <Calendar className="h-3 w-3" />
             {days} {days === 1 ? 'day' : 'days'} ago
           </Badge>
