@@ -1,5 +1,7 @@
 
+import { useState } from "react";
 import ProjectCard from "./ProjectCard";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
   {
@@ -53,14 +55,25 @@ const projects = [
 ];
 
 const ProjectGrid = () => {
+  const navigate = useNavigate();
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+
+  const handleProjectClick = (projectId: number) => {
+    navigate(`/project/${projectId}`);
+  };
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4 mb-12 animate-fade-in">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 mb-12 animate-fade-in">
       {projects.map((project) => (
         <ProjectCard
           key={project.id}
           title={project.title}
           image={project.image}
           days={project.days}
+          isHovered={hoveredId === project.id}
+          onMouseEnter={() => setHoveredId(project.id)}
+          onMouseLeave={() => setHoveredId(null)}
+          onClick={() => handleProjectClick(project.id)}
         />
       ))}
     </div>

@@ -16,7 +16,7 @@ const SuggestionBar = () => {
         <Button 
           key={suggestion.id} 
           variant="outline" 
-          className="rounded-full bg-lovable-gray-light text-muted-foreground hover:bg-lovable-gray-medium hover:text-foreground border-none"
+          className="rounded-full bg-[#221F26] text-white/80 hover:text-white hover:bg-[#8B5CF6]/20 border-[#33C3F0]/20"
         >
           {suggestion.text}
           <ArrowUpRight className="h-4 w-4 ml-1" />
