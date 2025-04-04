@@ -15,7 +15,7 @@ const Index = () => {
         <TabNavigation />
         <ProjectGrid />
       </main>
-      <footer className="py-6 border-t border-[#33C3F0]/20">
+      <footer className="py-6 border-t border-[#8B5CF6]/20">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <p className="text-xs text-white/60">

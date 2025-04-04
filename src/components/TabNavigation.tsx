@@ -24,10 +24,10 @@ const TabNavigation = () => {
       </Tabs>
       
       <div className="flex gap-2">
-        <Button variant="outline" size="sm" className="bg-[#221F26] border-[#33C3F0]/20 text-[#33C3F0] hover:text-white hover:bg-[#33C3F0]/20">
+        <Button variant="outline" size="sm" className="bg-[#221F26] border-[#8B5CF6]/20 text-[#8B5CF6] hover:text-white hover:bg-[#8B5CF6]/20">
           <Grid3X3 className="h-4 w-4" />
         </Button>
-        <Button variant="outline" size="sm" className="bg-[#221F26] border-[#33C3F0]/20 text-[#33C3F0] hover:text-white hover:bg-[#33C3F0]/20">
+        <Button variant="outline" size="sm" className="bg-[#221F26] border-[#8B5CF6]/20 text-[#8B5CF6] hover:text-white hover:bg-[#8B5CF6]/20">
           <List className="h-4 w-4" />
         </Button>
       </div>
