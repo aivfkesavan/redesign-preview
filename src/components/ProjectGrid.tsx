@@ -3,6 +3,14 @@ import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { 
+  Pagination, 
+  PaginationContent, 
+  PaginationItem, 
+  PaginationLink, 
+  PaginationNext, 
+  PaginationPrevious 
+} from "@/components/ui/pagination";
 
 const projects = [
   {
@@ -64,25 +72,70 @@ const ProjectGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12 animate-fade-in">
-      {projects.map((project, index) => (
-        <motion.div
-          key={project.id}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: index * 0.05 }}
-        >
-          <ProjectCard
-            title={project.title}
-            image={project.image}
-            days={project.days}
-            isHovered={hoveredId === project.id}
-            onMouseEnter={() => setHoveredId(project.id)}
-            onMouseLeave={() => setHoveredId(null)}
-            onClick={() => handleProjectClick(project.id)}
-          />
-        </motion.div>
-      ))}
+    <div className="mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+            whileHover={{ y: -5 }}
+          >
+            <ProjectCard
+              title={project.title}
+              image={project.image}
+              days={project.days}
+              isHovered={hoveredId === project.id}
+              onMouseEnter={() => setHoveredId(project.id)}
+              onMouseLeave={() => setHoveredId(null)}
+              onClick={() => handleProjectClick(project.id)}
+            />
+          </motion.div>
+        ))}
+      </div>
+      
+      <Pagination>
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious 
+              href="#" 
+              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white" 
+            />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink 
+              href="#" 
+              isActive 
+              className="bg-gradient-to-br from-[#8B5CF6] to-[#7847e3] text-white border-[#2F2763]"
+            >
+              1
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink 
+              href="#" 
+              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white"
+            >
+              2
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink 
+              href="#" 
+              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white"
+            >
+              3
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationNext 
+              href="#" 
+              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white" 
+            />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </div>
   );
 };

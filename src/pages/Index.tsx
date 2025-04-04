@@ -15,7 +15,7 @@ const Index = () => {
         <TabNavigation />
         <ProjectGrid />
       </main>
-      <footer className="py-6 border-t border-[#2F2763]">
+      <footer className="py-6 border-t border-[#2F2763]/50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
@@ -27,10 +27,10 @@ const Index = () => {
               </p>
             </div>
             <div className="flex gap-6">
-              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition">Terms</a>
-              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition">Privacy</a>
-              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition">Contact</a>
-              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition">Help</a>
+              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition-colors">Terms</a>
+              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition-colors">Privacy</a>
+              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition-colors">Contact</a>
+              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition-colors">Help</a>
             </div>
           </div>
         </div>
