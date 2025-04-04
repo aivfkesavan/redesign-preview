@@ -7,7 +7,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-[#1A1F2C]">
+    <div className="min-h-screen flex flex-col bg-[#0F0F15]">
       <Navbar />
       <main className="flex-1 container mx-auto py-8 px-4">
         <PromptInput />
@@ -15,16 +15,22 @@ const Index = () => {
         <TabNavigation />
         <ProjectGrid />
       </main>
-      <footer className="py-6 border-t border-[#8B5CF6]/20">
+      <footer className="py-6 border-t border-[#2F2763]">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
-            <p className="text-xs text-white/60">
-              © {new Date().getFullYear()} Vibe Coding. All rights reserved.
-            </p>
-            <div className="flex gap-4">
-              <a href="#" className="text-xs text-white/60 hover:text-white transition">Terms</a>
-              <a href="#" className="text-xs text-white/60 hover:text-white transition">Privacy</a>
-              <a href="#" className="text-xs text-white/60 hover:text-white transition">Contact</a>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <div className="h-6 w-6 rounded-md purple-gradient flex items-center justify-center">
+                <span className="font-bold text-xs text-white">V</span>
+              </div>
+              <p className="text-xs text-white/60">
+                © {new Date().getFullYear()} Vibe Coding. All rights reserved.
+              </p>
+            </div>
+            <div className="flex gap-6">
+              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition">Terms</a>
+              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition">Privacy</a>
+              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition">Contact</a>
+              <a href="#" className="text-xs text-white/60 hover:text-[#8B5CF6] transition">Help</a>
             </div>
           </div>
         </div>

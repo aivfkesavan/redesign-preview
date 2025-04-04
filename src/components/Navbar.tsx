@@ -1,49 +1,56 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Bell, Plus, Search } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <header className="w-full bg-[#1A1F2C] border-b border-[#8B5CF6]/20">
+    <header className="w-full bg-[#0F0F15] border-b border-[#2F2763]">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-4">
           <a href="/" className="flex items-center gap-2">
-            <img 
-              src="/lovable-uploads/56b54e21-3518-425f-9465-55877834c461.png" 
-              alt="Vibe Coding Logo" 
-              className="h-8 w-8"
-            />
-            <span className="font-bold text-xl bg-gradient-to-r from-[#8B5CF6] to-[#8B5CF6] bg-clip-text text-transparent">
+            <div className="h-8 w-8 rounded-md purple-gradient flex items-center justify-center">
+              <span className="font-bold text-lg text-white">V</span>
+            </div>
+            <span className="font-bold text-xl text-gradient">
               Vibe Coding
             </span>
           </a>
           
-          <nav className="hidden md:flex items-center gap-6 ml-6">
-            <a href="#" className="text-sm font-medium text-[#8B5CF6] hover:text-white transition">
-              Projects
-            </a>
-            <a href="#" className="text-sm font-medium text-white/60 hover:text-white transition">
-              Templates
-            </a>
-            <a href="#" className="text-sm font-medium text-white/60 hover:text-white transition">
-              Learn
-            </a>
-            <a href="#" className="text-sm font-medium text-white/60 hover:text-white transition">
-              Support
-            </a>
-          </nav>
+          <div className="hidden md:flex ml-8 relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/50" />
+            <input 
+              type="text" 
+              placeholder="Search projects..." 
+              className="h-9 bg-[#161622] border border-[#2F2763] rounded-md pl-9 pr-4 text-sm text-white/80 focus:outline-none focus:border-[#8B5CF6] w-64"
+            />
+          </div>
         </div>
         
-        <div className="flex items-center gap-4">
-          <Button variant="ghost" size="sm" className="hidden md:flex text-white/80 hover:text-white hover:bg-[#221F26]">
+        <div className="flex items-center gap-3">
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className="relative text-white/70 hover:text-white hover:bg-[#2F2763]"
+          >
+            <Bell className="h-5 w-5" />
+            <span className="absolute -top-0.5 -right-0.5 h-2.5 w-2.5 bg-[#8B5CF6] rounded-full"></span>
+          </Button>
+          
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="hidden md:flex border-[#2F2763] text-white/80 hover:text-white hover:border-[#8B5CF6] hover:bg-[#2F2763]"
+          >
             Sign In
           </Button>
+          
           <Button 
-            variant="default" 
-            size="sm" 
-            className="bg-[#8B5CF6] hover:bg-[#8B5CF6]/90 text-white"
+            className="purple-gradient text-white"
+            size="sm"
           >
-            Get Started
+            <Plus className="h-4 w-4 mr-1" />
+            New Project
           </Button>
         </div>
       </div>

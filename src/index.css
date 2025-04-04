@@ -7,33 +7,24 @@
   :root {
     --background: 0 0% 7%;
     --foreground: 0 0% 98%;
-
     --card: 0 0% 11%;
     --card-foreground: 0 0% 98%;
-
     --popover: 0 0% 11%;
     --popover-foreground: 0 0% 98%;
-
-    --primary: 25 100% 60%;
+    --primary: 265 84% 63%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 13%;
+    --secondary: 260 10% 14%;
     --secondary-foreground: 0 0% 98%;
-
     --muted: 0 0% 16%;
     --muted-foreground: 0 0% 65%;
-
-    --accent: 25 100% 60%;
+    --accent: 265 84% 63%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 20%;
+    --border: 260 20% 25%;
     --input: 0 0% 16%;
-    --ring: 25 100% 60%;
-
-    --radius: 0.5rem;
+    --ring: 265 84% 63%;
+    --radius: 1rem;
   }
 }
 
@@ -43,34 +34,35 @@
   }
 
   body {
-    @apply bg-lovable-dark text-foreground overflow-x-hidden;
+    @apply bg-[#0F0F15] text-foreground overflow-x-hidden;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
   
   /* Scrollbar styling */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-lovable-dark;
+    @apply bg-[#0F0F15];
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-lovable-gray-light rounded-full;
+    @apply bg-[#3D2E7C] rounded-full;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-lovable-gray-medium;
+    @apply bg-[#533EB3];
   }
 }
 
 @layer components {
   .project-card {
-    @apply relative overflow-hidden bg-lovable-dark-secondary rounded-lg border border-lovable-gray-light hover:border-[#8B5CF6]/70 transition-all duration-200 cursor-pointer;
+    @apply relative overflow-hidden bg-[#161622] rounded-xl border border-[#2F2763] hover:border-[#8B5CF6] transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[#8B5CF6]/20;
   }
   
   .project-card-img-container {
-    @apply relative h-36 overflow-hidden bg-lovable-gray-dark;
+    @apply relative h-36 overflow-hidden bg-[#1D1C2E];
   }
   
   .project-card-img {
@@ -81,25 +73,64 @@
     @apply scale-105;
   }
   
-  .nav-tab {
-    @apply px-4 py-1.5 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground transition;
-  }
-  
-  .nav-tab.active {
-    @apply bg-lovable-gray-medium text-foreground;
-  }
-  
-  .suggestion-btn {
-    @apply px-4 py-2 rounded-full text-sm font-medium bg-lovable-gray-light text-muted-foreground hover:bg-lovable-gray-medium hover:text-foreground transition inline-flex items-center gap-2;
-  }
-  
   .glass-effect {
-    @apply backdrop-blur-sm bg-[#1E1E1E]/70 border border-[#8B5CF6]/20;
+    @apply backdrop-blur-lg bg-[#161622]/80 border border-[#2F2763];
+  }
+  
+  .purple-gradient {
+    @apply bg-gradient-to-br from-[#8B5CF6] to-[#6e42dd];
+  }
+  
+  .glow {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  }
+  
+  .card-glow {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#8B5CF6] to-[#6e42dd] bg-clip-text text-transparent;
   }
 }
 
 @layer utilities {
-  .glass-effect {
-    @apply backdrop-blur-md bg-lovable-dark-secondary/70 border border-[#8B5CF6]/20;
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+  
+  .animate-scale {
+    animation: scale 0.3s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  from { 
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to { 
+    transform: scale(1);
+    opacity: 1;
   }
 }

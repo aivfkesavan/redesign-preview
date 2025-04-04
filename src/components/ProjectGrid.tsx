@@ -2,53 +2,54 @@
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const projects = [
   {
     id: 1,
-    title: "hai-ve-connectivity",
-    image: "", // Keep empty string for compatibility
-    days: 2,
+    title: "ai-visual-generator",
+    image: "",
+    days: 1,
   },
   {
     id: 2,
-    title: "starlit-code-canvas",
+    title: "nebula-dashboard",
     image: "",
     days: 2,
   },
   {
     id: 3,
-    title: "cuddle-feature-kit",
+    title: "pulse-analytics",
     image: "",
-    days: 2,
+    days: 3,
   },
   {
     id: 4,
-    title: "theia-webcraft",
+    title: "quantum-design-system",
     image: "",
-    days: 2,
+    days: 4,
   },
   {
     id: 5,
-    title: "signaturesafe",
+    title: "cipher-auth-service",
     image: "",
-    days: 6,
+    days: 5,
   },
   {
     id: 6,
-    title: "snapshot-revamp",
+    title: "echo-messaging-app",
     image: "",
     days: 7,
   },
   {
     id: 7,
-    title: "web-design-dreamweaver",
+    title: "fusion-commerce",
     image: "",
-    days: 14,
+    days: 10,
   },
   {
     id: 8,
-    title: "demo-landing-creator",
+    title: "orbit-portfolio",
     image: "",
     days: 14,
   },
@@ -63,18 +64,24 @@ const ProjectGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 mb-12 animate-fade-in">
-      {projects.map((project) => (
-        <ProjectCard
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12 animate-fade-in">
+      {projects.map((project, index) => (
+        <motion.div
           key={project.id}
-          title={project.title}
-          image={project.image}
-          days={project.days}
-          isHovered={hoveredId === project.id}
-          onMouseEnter={() => setHoveredId(project.id)}
-          onMouseLeave={() => setHoveredId(null)}
-          onClick={() => handleProjectClick(project.id)}
-        />
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: index * 0.05 }}
+        >
+          <ProjectCard
+            title={project.title}
+            image={project.image}
+            days={project.days}
+            isHovered={hoveredId === project.id}
+            onMouseEnter={() => setHoveredId(project.id)}
+            onMouseLeave={() => setHoveredId(null)}
+            onClick={() => handleProjectClick(project.id)}
+          />
+        </motion.div>
       ))}
     </div>
   );
