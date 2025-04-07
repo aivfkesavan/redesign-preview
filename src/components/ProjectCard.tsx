@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Card 
-      className={`group transition-all duration-300 cursor-pointer h-[190px] bg-white/5 border border-white/10 rounded-xl overflow-hidden ${isHovered ? 'shadow-lg shadow-black/20 scale-[1.02]' : ''}`}
+      className={`group transition-all duration-300 cursor-pointer h-[190px] bg-white border border-gray-200 rounded-xl overflow-hidden ${isHovered ? 'shadow-lg scale-[1.02]' : 'shadow-sm'}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}
@@ -34,24 +34,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="flex justify-between items-start mb-4">
             <div className={`flex-1 flex items-center gap-3`}>
               {isHovered ? (
-                <FolderOpen className={`h-10 w-10 text-gray-800 transition-all duration-300`} />
+                <FolderOpen className={`h-10 w-10 text-black transition-all duration-300`} />
               ) : (
-                <Folder className={`h-10 w-10 text-gray-800 transition-all duration-300`} />
+                <Folder className={`h-10 w-10 text-gray-700 transition-all duration-300`} />
               )}
               <div>
-                <h3 className="text-base font-medium text-black/90 group-hover:text-black/70 transition-colors truncate">{title}</h3>
-                <Badge variant="outline" className="mt-1 bg-white/5 border-white/10 text-xs font-normal px-2 py-0.5 flex items-center gap-1 w-fit text-gray-700 group-hover:border-black/30 transition-colors">
+                <h3 className="text-base font-medium text-black truncate">{title}</h3>
+                <Badge variant="outline" className="mt-1 bg-transparent border-gray-300 text-xs font-normal px-2 py-0.5 flex items-center gap-1 w-fit text-gray-500">
                   <Calendar className="h-3 w-3" />
                   {days} {days === 1 ? 'day' : 'days'} ago
                 </Badge>
               </div>
             </div>
-            <div className={`bg-white/5 border border-white/10 rounded-full p-1.5 transition-colors ${isHovered ? 'bg-white/10' : ''}`}>
-              <ExternalLink className="h-3.5 w-3.5 text-gray-800" />
+            <div className={`bg-gray-50 border border-gray-200 rounded-full p-1.5 transition-colors ${isHovered ? 'bg-gray-100' : ''}`}>
+              <ExternalLink className="h-3.5 w-3.5 text-gray-700" />
             </div>
           </div>
         </div>
-        <div className={`h-1.5 bg-gradient-to-r from-gray-200 to-gray-300`}></div>
+        <div className={`h-1.5 bg-gradient-to-r from-gray-800 to-gray-900`}></div>
       </CardContent>
     </Card>
   );

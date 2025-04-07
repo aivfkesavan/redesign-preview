@@ -77,10 +77,10 @@ const ProjectGrid = () => {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.05 }}
-            whileHover={{ y: -5 }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
+            whileHover={{ y: -4 }}
           >
             <ProjectCard
               title={project.title}
@@ -100,14 +100,14 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationPrevious 
               href="#" 
-              className="text-gray-800 border-white/10 bg-white/5 hover:bg-white/10" 
+              className="text-gray-700 border-gray-200 bg-white hover:bg-gray-50" 
             />
           </PaginationItem>
           <PaginationItem>
             <PaginationLink 
               href="#" 
               isActive 
-              className="bg-black text-white"
+              className="bg-black text-white hover:bg-gray-800"
             >
               1
             </PaginationLink>
@@ -115,7 +115,7 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationLink 
               href="#" 
-              className="text-gray-800 border-white/10 bg-white/5 hover:bg-white/10"
+              className="text-gray-700 border-gray-200 bg-white hover:bg-gray-50"
             >
               2
             </PaginationLink>
@@ -123,7 +123,7 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationLink 
               href="#" 
-              className="text-gray-800 border-white/10 bg-white/5 hover:bg-white/10"
+              className="text-gray-700 border-gray-200 bg-white hover:bg-gray-50"
             >
               3
             </PaginationLink>
@@ -131,7 +131,7 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationNext 
               href="#" 
-              className="text-gray-800 border-white/10 bg-white/5 hover:bg-white/10" 
+              className="text-gray-700 border-gray-200 bg-white hover:bg-gray-50" 
             />
           </PaginationItem>
         </PaginationContent>
