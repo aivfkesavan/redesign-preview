@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Calendar, ExternalLink, Folder, FolderOpen } from 'lucide-react';
+import { Folder, FolderOpen } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -24,34 +24,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Card 
-      className={`group transition-all duration-300 cursor-pointer h-[190px] bg-white border border-gray-200 rounded-xl overflow-hidden ${isHovered ? 'shadow-lg scale-[1.02]' : 'shadow-sm'}`}
+      className={`group transition-all duration-300 cursor-pointer h-[170px] bg-white border-gray-200 rounded-lg overflow-hidden ${isHovered ? 'shadow-md border-gray-300' : 'shadow-sm'}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}
     >
       <CardContent className="p-0 h-full flex flex-col">
-        <div className={`p-6 flex-1 flex flex-col`}>
-          <div className="flex justify-between items-start mb-4">
-            <div className={`flex-1 flex items-center gap-3`}>
+        <div className="p-5 flex-1 flex flex-col">
+          <div className="flex justify-between items-start mb-2">
+            <div className="flex items-center gap-3">
               {isHovered ? (
-                <FolderOpen className={`h-10 w-10 text-black transition-all duration-300`} />
+                <FolderOpen className="h-8 w-8 text-black" />
               ) : (
-                <Folder className={`h-10 w-10 text-gray-700 transition-all duration-300`} />
+                <Folder className="h-8 w-8 text-gray-700" />
               )}
               <div>
-                <h3 className="text-base font-medium text-black truncate">{title}</h3>
-                <Badge variant="outline" className="mt-1 bg-transparent border-gray-300 text-xs font-normal px-2 py-0.5 flex items-center gap-1 w-fit text-gray-500">
-                  <Calendar className="h-3 w-3" />
+                <h3 className="text-base font-medium text-gray-900 truncate">{title}</h3>
+                <p className="text-xs text-gray-500 mt-1">
                   {days} {days === 1 ? 'day' : 'days'} ago
-                </Badge>
+                </p>
               </div>
-            </div>
-            <div className={`bg-gray-50 border border-gray-200 rounded-full p-1.5 transition-colors ${isHovered ? 'bg-gray-100' : ''}`}>
-              <ExternalLink className="h-3.5 w-3.5 text-gray-700" />
             </div>
           </div>
         </div>
-        <div className={`h-1.5 bg-gradient-to-r from-gray-800 to-gray-900`}></div>
+        <div className="h-1 bg-black"></div>
       </CardContent>
     </Card>
   );

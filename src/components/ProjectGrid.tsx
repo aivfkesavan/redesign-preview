@@ -73,14 +73,14 @@ const ProjectGrid = () => {
 
   return (
     <div className="mb-16">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
-            whileHover={{ y: -4 }}
+            transition={{ duration: 0.2, delay: index * 0.05 }}
+            whileHover={{ y: -2 }}
           >
             <ProjectCard
               title={project.title}
@@ -107,7 +107,7 @@ const ProjectGrid = () => {
             <PaginationLink 
               href="#" 
               isActive 
-              className="bg-black text-white hover:bg-gray-800"
+              className="bg-black text-white border-black hover:bg-gray-800"
             >
               1
             </PaginationLink>
