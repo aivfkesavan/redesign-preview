@@ -1,15 +1,12 @@
-
 import Navbar from "@/components/Navbar";
 import PromptInput from "@/components/PromptInput";
 import SuggestionBar from "@/components/SuggestionBar";
 import TabNavigation from "@/components/TabNavigation";
 import ProjectGrid from "@/components/ProjectGrid";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+  return <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
-      <main className="flex-1 container mx-auto py-6 px-4">
+      <main className="flex-1 container mx-auto py-6 px-4 bg-gray-950">
         <PromptInput />
         <SuggestionBar />
         <TabNavigation />
@@ -35,8 +32,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
