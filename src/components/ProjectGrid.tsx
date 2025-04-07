@@ -3,14 +3,8 @@ import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { 
-  Pagination, 
-  PaginationContent, 
-  PaginationItem, 
-  PaginationLink, 
-  PaginationNext, 
-  PaginationPrevious 
-} from "@/components/ui/pagination";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
@@ -63,7 +57,12 @@ const projects = [
   },
 ];
 
-const ProjectGrid = () => {
+interface ProjectGridProps {
+  limit?: number;
+  showViewMore?: boolean;
+}
+
+const ProjectGrid = ({ limit, showViewMore = false }: ProjectGridProps) => {
   const navigate = useNavigate();
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
@@ -71,10 +70,17 @@ const ProjectGrid = () => {
     navigate(`/project/${projectId}`);
   };
 
+  const handleViewMore = () => {
+    navigate("/projects");
+  };
+
+  // If limit is provided, only show that many projects
+  const displayedProjects = limit ? projects.slice(0, limit) : projects;
+
   return (
     <div className="mb-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
-        {projects.map((project, index) => (
+        {displayedProjects.map((project, index) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 30 }}
@@ -95,47 +101,17 @@ const ProjectGrid = () => {
         ))}
       </div>
       
-      <Pagination>
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious 
-              href="#" 
-              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white" 
-            />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink 
-              href="#" 
-              isActive 
-              className="bg-gradient-to-br from-[#8B5CF6] to-[#7847e3] text-white border-[#2F2763]"
-            >
-              1
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink 
-              href="#" 
-              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white"
-            >
-              2
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink 
-              href="#" 
-              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white"
-            >
-              3
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext 
-              href="#" 
-              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white" 
-            />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
+      {showViewMore && (
+        <div className="flex justify-center">
+          <Button 
+            onClick={handleViewMore}
+            className="purple-gradient text-white gap-2 px-6"
+          >
+            <span>View All Projects</span>
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

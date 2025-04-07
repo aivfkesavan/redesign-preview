@@ -13,7 +13,7 @@ const Index = () => {
         <PromptInput />
         <SuggestionBar />
         <TabNavigation />
-        <ProjectGrid />
+        <ProjectGrid limit={4} showViewMore={true} />
       </main>
       <footer className="py-6 border-t border-[#2F2763]/50">
         <div className="container mx-auto px-4">
