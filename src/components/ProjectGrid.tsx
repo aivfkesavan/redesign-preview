@@ -73,14 +73,14 @@ const ProjectGrid = () => {
 
   return (
     <div className="mb-16">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, delay: index * 0.05 }}
-            whileHover={{ y: -2 }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+            whileHover={{ y: -5 }}
           >
             <ProjectCard
               title={project.title}
@@ -100,14 +100,14 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationPrevious 
               href="#" 
-              className="text-gray-700 border-gray-200 bg-white hover:bg-gray-50" 
+              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white" 
             />
           </PaginationItem>
           <PaginationItem>
             <PaginationLink 
               href="#" 
               isActive 
-              className="bg-black text-white border-black hover:bg-gray-800"
+              className="bg-gradient-to-br from-[#8B5CF6] to-[#7847e3] text-white border-[#2F2763]"
             >
               1
             </PaginationLink>
@@ -115,7 +115,7 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationLink 
               href="#" 
-              className="text-gray-700 border-gray-200 bg-white hover:bg-gray-50"
+              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white"
             >
               2
             </PaginationLink>
@@ -123,7 +123,7 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationLink 
               href="#" 
-              className="text-gray-700 border-gray-200 bg-white hover:bg-gray-50"
+              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white"
             >
               3
             </PaginationLink>
@@ -131,7 +131,7 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationNext 
               href="#" 
-              className="text-gray-700 border-gray-200 bg-white hover:bg-gray-50" 
+              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white" 
             />
           </PaginationItem>
         </PaginationContent>
