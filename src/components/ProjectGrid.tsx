@@ -100,14 +100,14 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationPrevious 
               href="#" 
-              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white" 
+              className="text-gray-800 border-white/10 bg-white/5 hover:bg-white/10" 
             />
           </PaginationItem>
           <PaginationItem>
             <PaginationLink 
               href="#" 
               isActive 
-              className="bg-gradient-to-br from-[#8B5CF6] to-[#7847e3] text-white border-[#2F2763]"
+              className="bg-black text-white"
             >
               1
             </PaginationLink>
@@ -115,7 +115,7 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationLink 
               href="#" 
-              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white"
+              className="text-gray-800 border-white/10 bg-white/5 hover:bg-white/10"
             >
               2
             </PaginationLink>
@@ -123,7 +123,7 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationLink 
               href="#" 
-              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white"
+              className="text-gray-800 border-white/10 bg-white/5 hover:bg-white/10"
             >
               3
             </PaginationLink>
@@ -131,7 +131,7 @@ const ProjectGrid = () => {
           <PaginationItem>
             <PaginationNext 
               href="#" 
-              className="text-[#8B5CF6] border-[#2F2763] bg-[#161622]/80 hover:bg-[#2F2763] hover:text-white" 
+              className="text-gray-800 border-white/10 bg-white/5 hover:bg-white/10" 
             />
           </PaginationItem>
         </PaginationContent>
